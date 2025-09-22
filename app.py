@@ -12,7 +12,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🤝 Demostración de Comunicación entre Agentes (MCP)")
+st.title("Demostración de Comunicación entre Agentes (MCP)")
 
 # Configurar la API key de Gemini (igual que antes)
 try:
