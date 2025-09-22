@@ -8,7 +8,7 @@ from agents.editor_agent import review_and_finalize
 # --- Configuración de la página y API Key ---
 st.set_page_config(
     page_title="Agentes MCP en Acción",
-    page_icon="🤝",
+    page_icon="",
     layout="wide"
 )
 
@@ -37,7 +37,7 @@ if st.button("Ejecutar Flujo de Agentes"):
         if writer_context["status"] == "error":
             st.error(f"Error en el Agente Escritor: {writer_context['message']}")
         else:
-            st.subheader("📦 Contexto MCP entregado por el Agente 1")
+            st.subheader("Contexto MCP entregado por el Agente 1")
             st.text_area("Borrador Inicial:", value=writer_context['draft_text'], height=150, disabled=True)
             st.json(writer_context) # Muestra el paquete MCP completo
 
@@ -50,8 +50,8 @@ if st.button("Ejecutar Flujo de Agentes"):
             if final_context["status"] == "error":
                 st.error(f"Error en el Agente Editor: {final_context['message']}")
             else:
-                st.subheader("✅ Tarea Completada: Texto Final del Agente 2")
+                st.subheader("Tarea Completada: Texto Final del Agente 2")
                 st.text_area("Texto Final:", value=final_context['final_text'], height=150, disabled=True)
                 
-                st.subheader("📦 Contexto MCP Final")
+                st.subheader("Contexto MCP Final")
                 st.json(final_context) # Muestra el paquete MCP final y actualizado
